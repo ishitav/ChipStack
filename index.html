@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Game Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <h1>ChipStack</h1>
+    <div id="userOnboarding">
+        <button onclick="showDashboard()">Sign Up / Log In</button>
+    </div>
+    <div id="mainDashboard" style="display:none;">
+        <input type="number" id="buyInAmount" placeholder="Set Buy-In Amount">
+        <button onclick="createGame()">Create Game</button>
+        <input type="text" id="gameId" placeholder="Enter Game ID">
+        <input type="number" id="joinBuyInAmount" placeholder="Enter Buy-In Amount">
+        <button onclick="joinGame()">Join Game</button>
+        <button onclick="viewPastGames()">View Past Games</button>
+    </div>
+    <div id="gameArea" style="display:none;">
+        <h2>Game: <span id="currentGameId"></span></h2>
+        <button onclick="buyIn()">Buy In</button>
+        <button onclick="addRebuy()">Add Re-Buy</button>
+        <button onclick="endGame()">End Game</button>
+        <div id="playersList">
+            <h3>Players</h3>
+            <ul id="players"></ul>
+        </div>
+        <div id="totalAmount">
+            <h3>Total Amount in Game</h3>
+            <p id="totalMoney">$0</p>
+        </div>
+    </div>
+    <div id="postGame" style="display:none;">
+        <h2>Game Summary</h2>
+        <p id="gameSummary"></p>
+        <button onclick="showDashboard()">Back to Dashboard</button>
+    </div>
+    <div id="gameHistory" style="display:none;">
+        <h2>Past Games</h2>
+        <ul id="pastGamesList">
+            <!-- Fake history items will be added here -->
+        </ul>
+        <button onclick="showDashboard()">Back to Dashboard</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
